@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI GameOverText;
+    public TextMeshProUGUI MainMenuText;
     private int score;
     public Button RestartButton;
+    public Button PlayButton; //adds
+    public Button QuitButton; //adds
 
 
     // Start is called before the first frame update
@@ -33,6 +36,17 @@ public class GameManager : MonoBehaviour
         score += ScoreToAdd;
         ScoreText.text = "Score: " + score;
 
+    }
+
+
+    public void OnPlayButton() //adds
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void OnQuitButton() //adds
+    {
+        Application.Quit(); 
     }
 
     public void GameOver()
